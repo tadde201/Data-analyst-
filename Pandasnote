@@ -1,0 +1,74 @@
+this note pages 
+Python Note
+Video Timeline! 0:00 - Video Overview 
+1:11 - Getting Started with Python Pandas | Google Colab 
+1:21 - Getting Started with Python Pandas | Local Environment Setup (Cloning code, using virtual environment, VS Code
+) 3:58 - Intro to Dataframes | Creating DataFrames, Index/Columns, Basic Functionality 8:25 - Loading in DataFrames from Files (CSV, Excel, Parquet, etc.) 
+13:42 - Accessing Data | .head() .tail() .sample() 
+15:28 - Accessing Data | .loc() .iloc() 
+19:20 - Setting DataFrame Values w/ loc() & iloc() 
+20:20 - Accessing Single Values | .at() .iat()
+ 21:11 - Accessing Data | Grab Columns, Sort Values, Ascending/Descending 
+23:01 - Iterating over a DataFrame (df) with a For Loop | df.iterrows() 
+24:12 - Filtering Data | Syntax Options, Numeric Values, Multiple Conditions 
+27:58 - Filtering Data | String Operations, Regular Expressions (Regex)
+ 33:09 - Filtering Data | Query Functions 
+34:20 - Adding / Removing Columns | Basics, Conditional Values, Math Operations, Renaming Columns 
+41:40 - Adding / Removing Columns | String Operations, Datetime (pd.to_datetime) Operations 46:38 - Saving our Updated DataFrame (df.to_csv, df.to_excel, df.to_parquet, etc) 
+47:14 - Adding / Removing Columns | Using Lambda & Custom Functions w/ .apply() 
+50:42 - Merging & Concatenating Data | pd.merge(), pd.concat(), types of joins
+ 58:33 - Handling Null Values (NaNs) | .fillna() .interpolate() .dropna() .isna() .notna()
+ 1:04:05 - Aggregating Data | value_counts() 
+1:05:47 - Aggregating Data | Using Groupby - groupby() .sum() .mean() .agg() 
+1:08:24 - Aggregating Data | Pivot Tables
+ 1:10:28 - Groupby combined with Datetime Operations 
+1:14:38 - Advanced Functionality | .shift() .rank() .cumsum() .rolling() 
+1:22:10 - New Functionality | Pandas 1.0 vs Pandas 2.0 – pyarrow
+ 1:25:29 - New Functionality | GitHub Copilot & OpenAI ChatGPT 
+1:32:05 - What Next?? | Continuing your Python Pandas Learning
+# The most necessary pands code 
+Here’s a list of the most necessary and commonly used Pandas data manipulation functions and methods. These are fundamental tools for working with and analyzing data in a DataFrame.
+
+1. Loading Data
+pd.read_csv('file.csv'): Load data from a CSV file.
+pd.read_excel('file.xlsx'): Load data from an Excel file.
+df.to_csv('file.csv'): Save a DataFrame to a CSV file.
+df.to_excel('file.xlsx'): Save a DataFrame to an Excel file.
+2. Inspecting Data
+df.head(): View the first 5 rows of the DataFrame.
+df.tail(): View the last 5 rows.
+df.info(): Summary of the DataFrame including data types and non-null counts.
+df.describe(): Summary statistics for numerical columns.
+df.shape: Get the dimensions of the DataFrame (rows, columns).
+df.columns: Get column names.
+3. Selection and Filtering
+df['column']: Select a column by name.
+df[['column1', 'column2']]: Select multiple columns.
+df.loc[row_index, 'column_name']: Select rows and columns by labels.
+df.iloc[row_index, col_index]: Select rows and columns by positions.
+df[df['column'] == value]: Filter rows based on a condition.
+df[df['column'] > value]: Filter rows with conditions (e.g., greater than).
+4. Sorting and Ranking
+df.sort_values('column'): Sort DataFrame by a column.
+df.sort_values(['column1', 'column2'], ascending=False): Sort by multiple columns.
+df.rank(): Rank the values within a column.
+5. Handling Missing Data
+df.isnull(): Check for missing values.
+df.fillna(value): Fill missing values with a specific value.
+df.dropna(): Drop rows with missing values.
+df.dropna(subset=['column']): Drop rows where specific column(s) have missing values.
+6. Data Transformation
+df['column'].apply(function): Apply a function to each element in a column.
+df['new_column'] = df['column1'] + df['column2']: Create a new column by combining existing ones.
+df['column'].astype('int'): Change the data type of a column.
+pd.to_datetime(df['date_column']): Convert column to datetime format.
+7. Grouping and Aggregating
+df.groupby('column').size(): Count the number of occurrences for each group.
+df.groupby('column')['column2'].sum(): Sum the values in column2 for each group in column1.
+df.groupby('column').agg({'column2': ['sum', 'mean']}): Apply multiple aggregation functions to each group.
+8. Merging and Joining
+pd.merge(df1, df2, on='column'): Merge two DataFrames on a common column.
+pd.concat([df1, df2], axis=0): Concatenate DataFrames vertically (add rows).
+pd.concat([df1, df2], axis=1): Concatenate DataFrames horizontally (add columns).
+9. Reshaping Data
+
